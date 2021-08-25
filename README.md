@@ -9,6 +9,7 @@ test: "it should recognize 1, and return false if the number isn't 1, it should 
 code: dice()
 expected output: false if number === 1, number if !number === 1
 
+test: "if !return === false, it should add the number to an array (array used to store the points accumulated in one turn)"
 
 
 
