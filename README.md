@@ -5,9 +5,12 @@ code:
 dice()
 expected output: a random number between 1 and 6
 
-"it should recognize 1, and return 0"
+test: "it should recognize 1, and return false if the number isn't 1, it should return the number"
+code: dice()
+expected output: false if number === 1, number if !number === 1
 
-"it should add number to turn total if !number === 1"
+
+
 
 //////////////////////////////
 when a player clicks play:
