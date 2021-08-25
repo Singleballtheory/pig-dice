@@ -1,6 +1,4 @@
 
-
-
 Player.prototype.dice = function() {
   let number = Math.floor((Math.random() * 6) + 1);
   if (number !== 1) {
@@ -36,7 +34,7 @@ $(document).ready(function() {
     $("#name").hide();
     $("#player1").html(nameOne);
     $("#pointTotal1").append(playerOne.totalPoints);
-    $("#currentTotal1").append(playerOne.currentTotal);
+    $("#currentTotal1").append(playerOne.currentTotal[0]);
     $("#player2").html(nameTwo);
     $("#pointTotal2").append(playerTwo.totalPoints);
     $("#currentTotal2").append(playerTwo.currentTotal);
