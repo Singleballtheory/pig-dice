@@ -11,4 +11,12 @@ function dice() {
   }
   console.log(currentTotal);
 } 
-dice();
+
+function sum(currentTotal) {
+  let totalPoints = 0;
+  for (let i=0; i < currentTotal.length; i++) {
+    totalPoints = totalPoints + currentTotal[i];
+  }
+  return totalPoints;
+}
+

@@ -13,9 +13,7 @@ test: "if !return === false, it should add the number to an array (array used to
 
 test: "if number === 1, the array should clear"
 
-
-
-
+test: "it should add up all the numbers in the current total array and push the sum into the total points array"
 
 //////////////////////////////
 when a player clicks play:
