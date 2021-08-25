@@ -1,29 +1,28 @@
 
-let currentTotal = [];
 
-function dice() {
+
+Player.prototype.dice = function() {
   let number = Math.floor((Math.random() * 6) + 1);
   if (number !== 1) {
-    currentTotal.push(number);
+    this.currentTotal.push(number);
   } else if (number === 1) {
-    return currentTotal = [];
+    return this.currentTotal = [];
     //call function here that ends the turn
   }
-  console.log(currentTotal);
+  console.log(this.currentTotal);
 } 
 
-function sum(currentTotal) {
-  let totalPoints = 0;
-  for (let i=0; i < currentTotal.length; i++) {
-    totalPoints = totalPoints + currentTotal[i];
+Player.prototype.sum = function() {
+  this.totalPoints = 0;
+  for (let i=0; i < this.currentTotal.length; i++) {
+    this.totalPoints = this.totalPoints + this.currentTotal[i];
   }
-  return totalPoints;
 }
 
-function Player(name, currentTotal, totalPoints) {
-  this.name = name;
-  this.currentTotal = currentTotal;
-  this.totalPoints = totalPoints;
+function Player(variable2, variable) {
+  this.name = variable2;
+  this.currentTotal = [];
+  this.totalPoints = variable;
 }
 
 $(document).ready(function() {
@@ -31,11 +30,36 @@ $(document).ready(function() {
     event.preventDefault();
     const nameOne = $("input#name1").val();
     const nameTwo = $("input#name2").val();
-    let playerOne = new Player (nameOne, 0, 0);
-    let playerTwo = new Player (nameTwo, 0, 0);
+    let playerOne = new Player (nameOne);
+    let playerTwo = new Player (nameTwo);
     $("#game").show();
     $("#name").hide();
     $("#player1").html(nameOne);
+    $("#pointTotal1").append(playerOne.totalPoints);
+    $("#currentTotal1").append(playerOne.currentTotal);
     $("#player2").html(nameTwo);
+    $("#pointTotal2").append(playerTwo.totalPoints);
+    $("#currentTotal2").append(playerTwo.currentTotal);
+    $("#roll1").on("click",function() {
+      playerOne.dice();
+      return playerOne.currentTotal;
+    })
+    $("#roll2").on("click",function() {
+      playerTwo.dice();
+    })
   })
+  
 })
+
+
+
+// function attachContactListeners() {
+//   $("ul#contacts").onclick(function() {
+//     showContact(this.id);
+//   });
+//   $("#buttons").on("click", ".deleteButton", function() {
+//     addressBook.deleteContact(this.id);
+//     $("#show-contact").hide();
+//     displayContactDetails(addressBook);
+//   });
+// }
