@@ -1,6 +1,9 @@
 Dice function:
 
-"it should create a random number between 1 and 6"
+test: "it should create a random number between 1 and 6"
+code:
+dice()
+expected output: a random number between 1 and 6
 
 "it should recognize 1, and return 0"
 
