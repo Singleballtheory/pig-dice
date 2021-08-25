@@ -20,3 +20,10 @@ function sum(currentTotal) {
   return totalPoints;
 }
 
+function Player(name, currentTotal, totalPoints) {
+  this.name = name;
+  this.currentTotal = currentTotal;
+  this.totalPoints = totalPoints;
+}
+
+const player1 = new Player(inputName, 0, 0)
