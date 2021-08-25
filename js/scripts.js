@@ -1,5 +1,4 @@
 
-
 let currentTotal = [];
 
 function dice() {
@@ -7,7 +6,8 @@ function dice() {
   if (number !== 1) {
     currentTotal.push(number);
   } else if (number === 1) {
-    return false;
+    return currentTotal = [];
+    //call function here that ends the turn
   }
   console.log(currentTotal);
 } 
