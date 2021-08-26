@@ -9,13 +9,16 @@
 </head>
 <body>
   <div class="container">
-    <h1>Play Pig Dice!</h1>
+    <h1 class = "jumbotron" id="banner"></h1>
+    <h1 id="pigDice">Play Pig Dice!</h1>
     <div id="play">
       <form id="name">
-        <label for="name1">Player 1 <br> Enter your name to play:</label>
+        <label for="name1">Enter Player1 Name:</label>
         <input type="text" id="name1" required>
-        <label for="name2">Player 2 <br>Enter your name to play:</label>
+        <br>
+        <label for="name2">Enter Player2 Name:</label>
         <input type="text" id="name2" required>
+        <br>
         <button type="submit" id="play">Click here to play!</button>
       </form>
     </div>
@@ -42,9 +45,12 @@
       </div>
     </div>
     <div id = "youWin">
-      <h1>Congratulations <span id="winner"></span>, You win!</h1>
+      <h1 class = "jumbotron">Congratulations <span id="winner"></span>, You win!</h1>
+      <img src="" alt="">
+      <button type="reset" onClick="window.location.reload();">button smash to play again!</button>
     </div>
   </div>
 </body>
 </html>
+
 

@@ -1,5 +1,3 @@
-this.totalPoints = 0;
-
 
 function Player(variable2, variable) {
   this.name = variable2;
@@ -20,7 +18,7 @@ Player.prototype.dice = function() {
 Player.prototype.sum = function() {
   for (let i=0; i < this.currentTotal.length; i++) {
     this.totalPoints = this.totalPoints + this.currentTotal[i];
-  } if (this.totalPoints >= 10) {
+  } if (this.totalPoints >= 20) {
     this.winner();
   }
   return this.currentTotal = [];
@@ -71,55 +69,3 @@ $(document).ready(function() {
   });
 })
 
-
-// function attachContactListeners() {
-//   $("ul#contacts").on("click", "li", function() {
-//     showContact(this.id);
-//   });
-//   $("#buttons").on("click", ".deleteButton", function() {
-//     addressBook.deleteContact(this.id);
-//     $("#show-contact").hide();
-//     displayContactDetails(addressBook);
-//   });
-// }
-// $(document).ready(function(){
-//   var fruitsArray = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
-// $.each(fruitsArray, function(index, value){
-//   $("#result").append(index + ": " + value + '<br>');
-// });
-// });
-///////////////////////
-
-// const myArray = ["stone","paper","scissors"];
-// const embedElements = () => {
-//    myArray.forEach(element => {
-//       document.getElementById('result').innerHTML +=
-//       `<div>${element}</div><br />`;
-//       // here result is the id of the div present in the DOM
-//    });
-// };
-
-// playerOne.currentTotal ;
-// const playerOneCTHTML = () {
-//   playerOne[currentTotal].forEach(number) {
-//     $("#currentTotal1").append("<li>" + number + "</li>")
-//   }
-// }
-
-// playerOne[currentTotal].forEach(function(number) {
-//   $("#currentTotal1").append(number + ", ")
-// })
-
-// Player.prototype.html = function() {
-//   this.currentTotal.forEach(function (number) {
-//     if (number !== 1) {
-//     this.currentHtml.push(number + ", ");
-//     }
-//   });
-// }
-
-// Player.prototype.currentSum = function() {
-//   this.currentSumTotal = 0;
-//   for (let i=0; i < this.currentTotal.length; i++) {
-  //   }
-//     this.currentSumTotal += this.currentTotal[i];

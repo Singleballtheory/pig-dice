@@ -9,3 +9,37 @@
 #youWin {
   display: none;
 }
+
+#pigDice {
+  text-align: center;
+  font-family: Ink Free;
+  background-color: bisque;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+#banner {
+  background-image: url(../img/pigs-4-wall-web.jpeg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  margin-bottom: 7px;
+}
+
+body {
+  background-image: url(../img/dice2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#play, #game {
+  background-color: rgba(245, 223, 196, 0.534);
+  border-radius: 15px;
+  padding: 5px;
+  text-align: center;
+}
+
+.card { 
+  background-color:rgba(255, 235, 205, 0.205);
+  
+}
