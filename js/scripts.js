@@ -23,6 +23,7 @@ function Player(variable2, variable) {
   this.totalPoints = variable;
 }
 
+
 $(document).ready(function() {
   $("form#name").submit(function(event) {
     event.preventDefault();
@@ -33,26 +34,25 @@ $(document).ready(function() {
     $("#game").show();
     $("#name").hide();
     $("#player1").html(nameOne);
-    $("#pointTotal1").append(playerOne.totalPoints);
-    $("#currentTotal1").append(playerOne.currentTotal[0]);
+    $("#pointTotal1").append(this.totalPoints);
+    $("#currentTotal1").append(this.currentTotal);
     $("#player2").html(nameTwo);
     $("#pointTotal2").append(playerTwo.totalPoints);
     $("#currentTotal2").append(playerTwo.currentTotal);
     $("#roll1").on("click",function() {
       playerOne.dice();
       return playerOne.currentTotal;
-    })
+    });
     $("#roll2").on("click",function() {
       playerTwo.dice();
-    })
+      return playerTwo.currentTotal;
+    });
+  });
   })
-  
-})
-
 
 
 // function attachContactListeners() {
-//   $("ul#contacts").onclick(function() {
+//   $("ul#contacts").on("click", "li", function() {
 //     showContact(this.id);
 //   });
 //   $("#buttons").on("click", ".deleteButton", function() {
@@ -61,3 +61,30 @@ $(document).ready(function() {
 //     displayContactDetails(addressBook);
 //   });
 // }
+// $(document).ready(function(){
+//   var fruitsArray = ["Apple", "Banana", "Orange", "Mango", "Pineapple"];
+// $.each(fruitsArray, function(index, value){
+//   $("#result").append(index + ": " + value + '<br>');
+// });
+// });
+///////////////////////
+
+// const myArray = ["stone","paper","scissors"];
+// const embedElements = () => {
+//    myArray.forEach(element => {
+//       document.getElementById('result').innerHTML +=
+//       `<div>${element}</div><br />`;
+//       // here result is the id of the div present in the DOM
+//    });
+// };
+
+// playerOne.currentTotal ;
+// const playerOneCTHTML = () {
+//   playerOne[currentTotal].forEach(number) {
+//     $("#currentTotal1").append("<li>" + number + "</li>")
+//   }
+// }
+
+// playerOne[currentTotal].forEach(function(number) {
+//   $("#currentTotal1").append(number + ", ")
+// })
