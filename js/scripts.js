@@ -1,21 +1,29 @@
+this.totalPoints = 0;
 
 Player.prototype.dice = function() {
   let number = Math.floor((Math.random() * 6) + 1);
   if (number !== 1) {
     this.currentTotal.push(number);
   } else if (number === 1) {
+    alert ("You got a one! No points for you!")
     return this.currentTotal = [];
     //call function here that ends the turn
   }
-  console.log(this.currentTotal);
 } 
 
 Player.prototype.sum = function() {
-  this.totalPoints = 0;
   for (let i=0; i < this.currentTotal.length; i++) {
     this.totalPoints = this.totalPoints + this.currentTotal[i];
   }
+  return this.currentTotal = [];
 }
+
+// Player.prototype.currentSum = function() {
+//   this.currentSumTotal = 0;
+//   for (let i=0; i < this.currentTotal.length; i++) {
+//     this.currentSumTotal += this.currentTotal[i];
+//   }
+// }
 
 function Player(variable2, variable) {
   this.name = variable2;
@@ -29,23 +37,25 @@ $(document).ready(function() {
     event.preventDefault();
     const nameOne = $("input#name1").val();
     const nameTwo = $("input#name2").val();
-    let playerOne = new Player (nameOne);
-    let playerTwo = new Player (nameTwo);
+    let playerOne = new Player (nameOne,0);
+    let playerTwo = new Player (nameTwo,0);
     $("#game").show();
     $("#name").hide();
     $("#player1").html(nameOne);
-    $("#pointTotal1").append(this.totalPoints);
-    $("#currentTotal1").append(this.currentTotal);
     $("#player2").html(nameTwo);
-    $("#pointTotal2").append(playerTwo.totalPoints);
-    $("#currentTotal2").append(playerTwo.currentTotal);
     $("#roll1").on("click",function() {
       playerOne.dice();
-      return playerOne.currentTotal;
+      $("#currentTotal1").html(playerOne.currentTotal);
     });
+    $("#hold1").on("click", function() {
+      playerOne.sum();
+      $("#pointTotal1").html(playerOne.totalPoints);
+      $("#currentTotal1").html("0");
+    })
     $("#roll2").on("click",function() {
       playerTwo.dice();
-      return playerTwo.currentTotal;
+      $("#pointTotal2").html(playerTwo.totalPoints);
+      $("#currentTotal2").html(playerTwo.currentTotal);
     });
   });
   })
