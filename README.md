@@ -48,3 +48,10 @@ player 2
   pointTotal
   points
 
+
+Current issues:
+doesn't display rolls seperately in current points
+doesn't display a total of the current points --- new div? Sum within the same id as currentPoints?
+doesn't toggle between players --- hide buttons?
+Still no end to the game ("You win!") when a player reaches 100
+

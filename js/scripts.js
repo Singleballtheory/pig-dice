@@ -1,13 +1,19 @@
 this.totalPoints = 0;
 
+
+function Player(variable2, variable) {
+  this.name = variable2;
+  this.currentTotal = [];
+  this.totalPoints = variable;
+}
+
 Player.prototype.dice = function() {
   let number = Math.floor((Math.random() * 6) + 1);
   if (number !== 1) {
     this.currentTotal.push(number);
   } else if (number === 1) {
-    alert ("You got a one! No points for you!")
+    toggle();
     return this.currentTotal = [];
-    //call function here that ends the turn
   }
 } 
 
@@ -18,19 +24,10 @@ Player.prototype.sum = function() {
   return this.currentTotal = [];
 }
 
-// Player.prototype.currentSum = function() {
-//   this.currentSumTotal = 0;
-//   for (let i=0; i < this.currentTotal.length; i++) {
-//     this.currentSumTotal += this.currentTotal[i];
-//   }
-// }
-
-function Player(variable2, variable) {
-  this.name = variable2;
-  this.currentTotal = [];
-  this.totalPoints = variable;
+function toggle() {
+  $("#roll1, #hold1").toggle();
+  $("#roll2, #hold2").toggle();
 }
-
 
 $(document).ready(function() {
   $("form#name").submit(function(event) {
@@ -51,14 +48,20 @@ $(document).ready(function() {
       playerOne.sum();
       $("#pointTotal1").html(playerOne.totalPoints);
       $("#currentTotal1").html("0");
-    })
+      toggle();
+    });
     $("#roll2").on("click",function() {
       playerTwo.dice();
-      $("#pointTotal2").html(playerTwo.totalPoints);
       $("#currentTotal2").html(playerTwo.currentTotal);
     });
+    $("#hold2").on("click", function() {
+      playerTwo.sum();
+      $("#pointTotal2").html(playerTwo.totalPoints);
+      $("#currentTotal2").html("0");
+      toggle();
+    });
   });
-  })
+})
 
 
 // function attachContactListeners() {
@@ -98,3 +101,17 @@ $(document).ready(function() {
 // playerOne[currentTotal].forEach(function(number) {
 //   $("#currentTotal1").append(number + ", ")
 // })
+
+// Player.prototype.html = function() {
+//   this.currentTotal.forEach(function (number) {
+//     if (number !== 1) {
+//     this.currentHtml.push(number + ", ");
+//     }
+//   });
+// }
+
+// Player.prototype.currentSum = function() {
+//   this.currentSumTotal = 0;
+//   for (let i=0; i < this.currentTotal.length; i++) {
+  //   }
+//     this.currentSumTotal += this.currentTotal[i];
