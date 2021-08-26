@@ -5,3 +5,7 @@
 #roll2, #hold2 {
   display: none;
 }
+
+#youWin {
+  display: none;
+}

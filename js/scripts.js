@@ -20,6 +20,8 @@ Player.prototype.dice = function() {
 Player.prototype.sum = function() {
   for (let i=0; i < this.currentTotal.length; i++) {
     this.totalPoints = this.totalPoints + this.currentTotal[i];
+  } if (this.totalPoints >= 10) {
+    this.winner();
   }
   return this.currentTotal = [];
 }
@@ -27,6 +29,12 @@ Player.prototype.sum = function() {
 function toggle() {
   $("#roll1, #hold1").toggle();
   $("#roll2, #hold2").toggle();
+}
+
+Player.prototype.winner = function() {
+  $("#youWin").show();
+  $("#game").hide();
+  $("#winner").html(this.name);
 }
 
 $(document).ready(function() {
