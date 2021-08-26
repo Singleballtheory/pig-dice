@@ -18,7 +18,7 @@ Player.prototype.dice = function() {
 Player.prototype.sum = function() {
   for (let i=0; i < this.currentTotal.length; i++) {
     this.totalPoints = this.totalPoints + this.currentTotal[i];
-  } if (this.totalPoints >= 20) {
+  } if (this.totalPoints >= 2) {
     this.winner();
   }
   return this.currentTotal = [];

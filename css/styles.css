@@ -8,6 +8,9 @@
 
 #youWin {
   display: none;
+  background-image: url(../img/victory.png);
+  background-size: cover;
+  height:600px;
 }
 
 #pigDice {
@@ -35,11 +38,33 @@ body {
 #play, #game {
   background-color: rgba(245, 223, 196, 0.534);
   border-radius: 15px;
-  padding: 5px;
+  padding: 8px;
   text-align: center;
+}
+
+#play li {
+  text-align: left;
 }
 
 .card { 
   background-color:rgba(255, 235, 205, 0.205);
-  
+  margin: 10px;
+}
+
+button {
+  background-color: #49457e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

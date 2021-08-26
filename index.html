@@ -13,6 +13,14 @@
     <h1 id="pigDice">Play Pig Dice!</h1>
     <div id="play">
       <form id="name">
+        <p>How to play Pig Dice:
+          <ol>
+            <li>Each player takes turn rolling a dice. (click the "roll" button!)</li>
+            <li>If the player rolls anything besides a one, that number is added to their current points tally.</li>
+            <li>If the player rolls a 1, they lose all of their current points and it becomes the other player's turn.</li>
+            <li>At any time during their turn, a player can choose to "hold". Clicking the "hold" button will add all the current points to the player's point total and end their turn.</li>
+          </ol>
+        </p>
         <label for="name1">Enter Player1 Name:</label>
         <input type="text" id="name1" required>
         <br>
@@ -44,9 +52,8 @@
         </div>
       </div>
     </div>
-    <div id = "youWin">
-      <h1 class = "jumbotron">Congratulations <span id="winner"></span>, You win!</h1>
-      <img src="" alt="">
+    <div id = "youWin" class="jumbotron">
+      <h1>Congratulations <span id="winner"></span>, You win!</h1>
       <button type="reset" onClick="window.location.reload();">button smash to play again!</button>
     </div>
   </div>
